@@ -22,25 +22,26 @@ How simple are they, really?
 
 Functional  components are basically, JavaScript functions. They accept a single props (short for properties) argument and returns React elements. Let's take a look at how they really work:
 
-```
+```jsx
 const Hello = () => {
   return(
     <h1>Hello React</>
   )
 }
+
 ```
 
 As little as it is, the piece of code above is a valid react component which renders "Hello React" to the screen. However, this is not the full picture.
 
 To get the full picture, lets create a new react app called bookstore by running
 
-```
+```bash
 npx create-react-app bookstore
 ```
 
 in the terminal and `cd` into the created bookstore project file at the end of the `create-react-app` process, then run:
 
-```
+```bash
 npm start
 ```
 
@@ -48,7 +49,7 @@ to start our development server.
 
 In our code editor, let's edit the App.js file, located in the src folder. Let's change the code so we have:
 
-```
+```jsx
 import React from 'react';
 
 function App() {
@@ -100,13 +101,13 @@ Let's do this in code:
 
 First, lets add the following array to our code to imitate our database. We could put it anywhere before the return statement, so let's put it on line 5, just before the return statement.
 
-```
+```js
 const books = ["Odd Thomas", "Harry Potter",  "The DaVinci Code", "The Lost Symbol", "Forever Odd", "Angels and Demons"]
 ```
 
 Now we have six books in our database that we want to render in our react app. To do this, we will add the following code to line 11 of our code:
 
-```
+```js
 <ul>
     {
       books.map(book => <li key={books.indexOf(book)}>{book}</li>)
